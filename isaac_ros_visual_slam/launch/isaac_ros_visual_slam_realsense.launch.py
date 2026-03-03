@@ -37,7 +37,7 @@ def generate_launch_description():
             'enable_gyro': True,
             'enable_accel': True,
             'gyro_fps': 200,
-            'accel_fps': 200,
+            'accel_fps': 63,
             'unite_imu_method': 2
         }],
     )
@@ -48,7 +48,10 @@ def generate_launch_description():
         plugin='nvidia::isaac_ros::visual_slam::VisualSlamNode',
         parameters=[{
             'enable_image_denoising': False,
+            'load_map_folder_path': '/home/bwi-nvd-1/Desktop/bams-fmc/data/map',
+            'localize_on_startup': True,
             'rectified_images': True,
+            'enable_localization_n_mapping': True,
             'enable_imu_fusion': True,
             'gyro_noise_density': 0.000244,
             'gyro_random_walk': 0.000019393,
